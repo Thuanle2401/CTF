@@ -22,7 +22,7 @@ Challenge file: [Google Drive](https://drive.google.com/file/d/1MjMGRiPzweCOdikO
 ```sh
 $ python2 vol.py -f Challenge.raw imageinfo
 ```
-![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/lab0.1.png?raw=true)
+![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/Lab0/lab0.1.png?raw=true)
 
 2. Phân tích hệ thống mục tiêu thông qua **memory dump** từ file **Challenge.raw**:
 
@@ -37,7 +37,7 @@ $ python2 vol.py -f Challenge.raw imageinfo
 ```sh
 $ python2 vol.py -f Challenge.raw --profile=Win7SP1x86 pslist
 ```
-![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/Lab0.2.png?raw=true)
+![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/Lab0/Lab0.2.png?raw=true)
 
 - Thực hiện lệnh này cung cấp cho chúng ta một danh sách các quá trình đang chạy khi **memory dump** được thực hiện. Đầu ra của lệnh cung cấp các thông tin gồm tên, PID, PPID, Luồng, Xử lý, thời gian bắt đầu, v.v.
 
@@ -46,7 +46,7 @@ $ python2 vol.py -f Challenge.raw --profile=Win7SP1x86 pslist
 - **DumpIt.exe**
 - **explorer.exe**
 
-![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/lab0.3.png?raw=true)
+![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/Lab0/lab0.3.png?raw=true)
 
 - **cmd.exe**: Đây là tiến trình chịu trách nhiệm cho command prompt. Việc trích xuất nội dung từ tiến trình này có thể cung cấp cho chúng ta thông tin chi tiết về những lệnh đã được thực thi trong hệ thống.
 - **DumpIt.exe**: Tiến trình này đã được ta sử dụng để có kết xuất được bộ nhớ của hệ thống.
@@ -58,7 +58,7 @@ $ python2 vol.py -f Challenge.raw --profile=Win7SP1x86 pslist
 ```sh
 $ python2 vol.py -f Challenge.raw --profile=Win7SP1x86 consoles
 ```
-![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/lab0.4.png?raw=true)
+![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/Lab0/lab0.4.png?raw=true)
 
 - Từ hình trên, một tệp python đã được thực thi. Lệnh được thực hiện là C:\Python27\python.exe C:\Users\hello\Desktop\demon.py.txt và nội dung trả về là một chuỗi nhất định đã được viết ra stdout. Bây giờ ta có thể thấy đây là một chuỗi được mã hóa hex `335d366f5d6031767631707f`. Một khi chúng tôi cố gắng decode hex, ta nhận được một văn bản vô nghĩa. **3]6o]`1vv1p\x7f**
 
@@ -77,7 +77,7 @@ output: b'3]6o]`1vv1p\x7f'
 ```sh
 $ python2 vol.py -f Challenge.raw --profile=Win7SP1x86 envars
 ```
-![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/lab0.5.png?raw=true)
+![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/Lab0/lab0.5.png?raw=true)
 
 **Bây giờ, chúng ta có tổng cộng 3 điều:**
 - Văn bản vô nghĩa là kết quả của việc decode bằng hex
@@ -104,12 +104,12 @@ output: [Key 2] => 1_4m_b3tt3r}
 $ python2 vol.py -f Challenge.raw --profile=Win7SP1x86 hashdump
 ```
 
-![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/lab0.7.png?raw=true)
+![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/Lab0/lab0.7.png?raw=true)
 - Lệnh này sẽ hiển thị danh sách các username và password hash có trong bộ nhớ RAM lúc dump. Trong số đó, hash mà chúng ta quan tâm là: `101da33f44e92c27835e64322d72e8b7`
 - Giờ bạn có thể dùng các website bẻ khóa hash NTLM online (như Hashes.com...) để giải mã hash này thành chuỗi văn bản gốc (mật khẩu rõ ràng).
 - Link: [hashes.com](https://hashes.com/en/decrypt/hash)
 
-![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/lab0.6.png?raw=true)
+![img](https://github.com/Thuanle2401/images/blob/main/ForensisMemLabs/Lab0/lab0.6.png?raw=true)
 
 **Kết quả sau khi giải mã:**
 
