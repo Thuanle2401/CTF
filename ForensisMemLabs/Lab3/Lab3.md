@@ -3,11 +3,11 @@
 # Challenge Description
 > Một tập lệnh độc hại đã mã hóa một thông tin rất bí mật mà tôi có trên hệ thống của mình. Bạn có thể khôi phục thông tin đó cho tôi được không?
 
-You will need this additional tool to solve the challenge,
+Bạn cần thêm 1 tool nữa để hỗ trợ cho bài Lab này
 
 `$ sudo apt install steghide`
 
-The flag format for this lab is: inctf{s0me_l33t_Str1ng}
+The flag format: inctf{s0me_l33t_Str1ng}
 
 Challenge file: [MemLabs-Lab3](https://mega.nz/#!2ohlTAzL!1T5iGzhUWdn88zS1yrDJA06yUouZxC-VstzXFSRuzVg)
 
